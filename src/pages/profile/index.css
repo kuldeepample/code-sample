@@ -1,0 +1,113 @@
+.profilePicture {
+   border: 2px solid #c60970;
+   height: 140px;
+   width: 140px;
+   border-radius: 50%;
+   object-fit: cover;
+}
+
+.profilePictureContainer {
+   position: relative;
+   height: 140px;
+   width: 140px;
+   border-radius: 50%;
+}
+.editProfile-btn{
+   content: "";
+   width: 26px;
+   height: 26px;
+   position: absolute;
+   border: 2px solid #fff;
+   border-radius: 50%;
+   background-color: #000;
+   bottom: 6px;
+   right: 10px;
+}
+.licenseIcon {
+   height: 40px;
+}
+
+.licenseinfoItem {
+   padding: 11px 30px;
+}
+
+.licenseinfoItemName {
+   width: 150px;
+}
+.licenseItems div:nth-child(odd){
+   background-color: #f8f9fa;
+}
+@media (min-width: 968px) {
+   .licenseItems:nth-child(even){
+      background-color: #f8f9fa;
+   }
+}
+.profile-tab{
+   font-size: 0.9rem;
+   width: 200px;
+   margin: 45px 29px 11px 26px;
+   padding: 10px;
+   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+   background-color: #fff;
+}
+
+.profile-field{
+   box-shadow: 0 3px 6px 0 rgba(157, 206, 255, 0.3);
+}
+
+.profile-key{
+   font-size: 14px;
+   color: #6e6e6e;
+}
+
+.profile-value{
+   color: #bcbabe;
+   font-size: 14px;
+ }
+
+ .profile-input{
+   padding: 6px 12px;
+   border: 1px solid #888;
+ }
+
+ .profile-text{
+   padding: 4px 0px 12px 0px;
+   font-size: 14px;
+   color: #535353;
+   width: 170px;
+ }
+
+ .active-tab{
+   color: #c60970;
+ }
+
+.renueButtonArea {
+   height: 13vh;
+   min-height: 80px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.profile-menu {
+   position: absolute;
+   right: 10px;
+   top: 75px;
+   z-index: 999;
+   color: #000;
+}
+.history-table-row {
+   background-color: #fff !important;
+   display: table-row;
+   border-bottom: #c60970 solid 2px;
+   color: #c60970;
+}
+
+.history-table-row td {
+   padding: 5px 10px;
+   text-transform: capitalize;
+   white-space: nowrap;
+}
+
+.table>:not(:first-child) {
+   border-top: 5px solid #f6f6f6;
+}

@@ -1,0 +1,65 @@
+#  SH Connect Web App Auto Deployment
+
+image: node:14.0
+
+pipelines:
+  branches: # Pipelines triggers on code push in branch
+    staging:
+      - step:
+          name: Build
+          script:
+            - rm -rf node_modules
+            - npm install
+            - unset CI
+            - echo $ENV_STAGING_BASE64 | base64 --decode --ignore-garbage > .env.staging
+            - npm run build:staging
+            - mkdir packaged
+            - tar -czvf packaged/package-${BITBUCKET_BUILD_NUMBER}.tar.gz -C build .
+          artifacts:
+            - packaged/**
+      - step:
+          name: Deploy
+          image: alpine
+          deployment: staging
+          script:
+            - mkdir upload
+            - tar -xf packaged/package-${BITBUCKET_BUILD_NUMBER}.tar.gz -C upload
+
+            - apk update && apk add openssh rsync sshpass
+            - ssh-keyscan -H $SERVER_ADDRESS >> ~/.ssh/known_hosts
+            - rsync -a -e "sshpass -p $USER_PASS ssh -o StrictHostKeyChecking=no" --delete upload/ $SERVER_USER@$SERVER_ADDRESS:/tmp/web_${BITBUCKET_BUILD_NUMBER}
+
+            - sshpass -p $USER_PASS ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_ADDRESS "rm -r /var/www/html_backup/*"
+            - sshpass -p $USER_PASS ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_ADDRESS "cp -r '/var/www/html'/* '/var/www/html_backup/'"
+            - sshpass -p $USER_PASS ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_ADDRESS "rm -r /var/www/html/*"
+            - sshpass -p $USER_PASS ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_ADDRESS "mv '/tmp/web_${BITBUCKET_BUILD_NUMBER}'/* '/var/www/html/'"
+
+    master:
+      - step:
+          name: Build
+          script:
+            - rm -rf node_modules
+            - npm install
+            - unset CI
+            - echo $ENV_PROD_BASE64 | base64 --decode --ignore-garbage > .env.production
+            - npm run build:prod
+            - mkdir packaged
+            - tar -czvf packaged/package-${BITBUCKET_BUILD_NUMBER}.tar.gz -C build .
+          artifacts:
+            - packaged/**
+      - step:
+          name: Deploy
+          image: alpine
+          deployment: production
+          script:
+            - mkdir upload
+            - tar -xf packaged/package-${BITBUCKET_BUILD_NUMBER}.tar.gz -C upload
+
+            - apk update && apk add openssh rsync sshpass
+            - ssh-keyscan -H $SERVER_ADDRESS >> ~/.ssh/known_hosts
+            - rsync -a -e "sshpass -p $USER_PASS ssh -o StrictHostKeyChecking=no" --delete upload/ $SERVER_USER@$SERVER_ADDRESS:/tmp/web_${BITBUCKET_BUILD_NUMBER}
+
+            - sshpass -p $USER_PASS ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_ADDRESS "rm -r /var/www/html_backup/*"
+            - sshpass -p $USER_PASS ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_ADDRESS "cp -r '/var/www/html'/* '/var/www/html_backup/'"
+            - sshpass -p $USER_PASS ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_ADDRESS "rm -r /var/www/html/*"
+            - sshpass -p $USER_PASS ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_ADDRESS "mv '/tmp/web_${BITBUCKET_BUILD_NUMBER}'/* '/var/www/html/'"

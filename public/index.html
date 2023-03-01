@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <style>
+    * {
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      box-shadow: none !important;
+    }
+
+    p {
+      font-weight: 500 !important;
+      margin: 0px;
+    }
+
+    input {
+      outline: none;
+    }
+
+    input::placeholder {
+      color: #818188;
+    }
+
+    iframe[style*="position: fixed; top: 0px; left: 0px"] {
+      display: none;
+    }
+  </style>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#c60970" />
+  <meta name="description"
+    content="SH Connect, School Health Corporation's new compliance platform, helps you ensure that your AED program is compliant and ready if and when an emergency occurs.
+  SH Connect and its best-in-class user interface take the guesswork out of keeping your AEDs ready for use.  Interactive dashboards allow for at-a-glance oversight of your program." />
+
+  <meta name="apple-itunes-app" content="app-id=1588403397, app-argument=https://apple.co/3Q8SAII"/>
+
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+  <title>School Health</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.2.11/iframeResizer.min.js"></script>
+  <script type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2t7ciNg4QST3zXCjSJVuQapFEhBTLo_E&libraries=places"></script>
+  <!-- Start of schoolhealthcorporation Zendesk Widget script -->
+  <script id="ze-snippet"
+    src="https://static.zdassets.com/ekr/snippet.js?key=74180f5f-307d-47c4-943b-717285eaccf2"> </script>
+  <!-- End of schoolhealthcorporation Zendesk Widget script -->
+</head>
+
+<body class="Bg-light">
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root">
+    <script> iFrameResize({ checkOrigin: false, log: true }, '#softr-aedlawcenter');</script>
+  </div>
+  <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+</body>
+
+</html>

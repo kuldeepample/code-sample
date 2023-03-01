@@ -1,0 +1,30 @@
+.peopleIcon {
+    height: 104px;
+    width: 104px;
+    border-radius: 55px !important;
+}
+
+.peopleAvatar {
+    height: 100%;
+    width: 100%;
+    border-radius: 55px !important;
+    object-fit: cover;
+}
+
+
+.peopleDetailProfile {
+    padding: 2px;
+    height: 133px;
+    width: 127px;
+    min-width: 100px;
+}
+
+@media only screen and (max-width: 375px) {
+    .page-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 25px !important;
+        padding: 2px 4px;
+    }
+}

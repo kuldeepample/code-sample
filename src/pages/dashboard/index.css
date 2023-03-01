@@ -1,0 +1,325 @@
+.dashLogo {
+    width: 85% !important;
+    object-fit: cover;
+}
+
+.logoSH {
+    height: 60%;
+}
+
+.hamburger {
+    width: 30px !important;
+    height: 30px !important;
+}
+
+p {
+    margin: 0px;
+}
+
+.cards {
+    position: relative;
+    border-radius: 13px;
+    height: 180px;
+}
+
+.title {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.18;
+    letter-spacing: 1.1px;
+    text-align: left;
+    color: #5a5a5a;
+}
+
+.list {
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #6e6e6e;
+}
+.avatar {
+    height: 49px !important;
+    min-width: 49px !important;
+    width: 49px !important;
+    object-fit: cover;
+}
+
+.avatar2 {
+    height: 58px;
+    width: 58px;
+}
+
+.avatar3 {
+    height: 35px;
+    width: 35px;
+    min-width: 35px;
+}
+
+.btn-check:focus+.btn-light,
+.btn-light:focus {
+    box-shadow: none !important;
+}
+
+
+.displayNone {
+    display: none;
+}
+
+.display-menu-icon {
+    display: none;
+}
+
+.badge {
+    height: 15px;
+    min-width: 15px;
+    border: 1px solid #c60970;
+    border-radius: 15px;
+    position: absolute;
+    margin: 2px 0 0 11px;
+    padding: 1.5px;
+    z-index: 2;
+    background: #fff;
+    font-size: 11px;
+    line-height: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #545454;
+}
+
+.activity-note {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2 !important;
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+
+.processing {
+    cursor: wait !important;
+}
+
+@keyframes close {
+    from {
+        position: 'relative';
+    }
+
+    to {
+        position: 'fixed';
+    }
+}
+
+@keyframes example {
+    from {
+        width: 0px;
+        position: 'relative';
+    }
+
+    to {
+        width: 300px;
+        position: 'fixed';
+    }
+}
+
+.sideNavFixed {
+    position: fixed;
+    top: 64px;
+    bottom: 0;
+    z-index: 1030;
+    width: 16rem;
+    transition: all 0.6s ease-in-out;
+    overflow: auto;
+    flex-wrap: nowrap !important;
+    scrollbar-width: 0px;
+}
+
+.sideNavFixed::-webkit-scrollbar {
+    display: none;
+}
+
+
+.body,
+.body+.footer {
+    margin-left: 16rem;
+    transition: all 0.6s ease-in-out;
+}
+
+.fullBody,
+.fullBody+.footer {
+    margin-left: 0rem;
+    transition: all 0.6s ease-in-out;
+}
+
+@media (min-width: 768px) {
+    .isSearchNav {
+        width: 0px;
+    }
+}
+
+@media (max-width: 767.98px) {
+
+    .body,
+    .body+.footer {
+        transition: all 0.6s ease-in-out;
+        margin-left: 0px;
+    }
+
+    .fullBody,
+    .fullBody+.footer {
+        margin-left: 0px;
+        transition: all;
+    }
+
+    .sideNav {
+        width: 0px !important;
+        transition: all 0.5s ease-in-out;
+    }
+}
+
+
+.navItem {
+    flex: 1 1 0%;
+}
+
+.closeNotSearch {
+    width: 'auto'
+}
+
+.close-menu-btn {
+    z-index: 1;
+    width: 75%;
+    position: absolute;
+    background: #000000bb;
+    right: 0;
+    animation-name: close;
+    animation-duration: 1s;
+}
+
+
+
+/* LG */
+@media only screen and (min-width: 1900px) {
+    .dashLogo {
+        width: 60% !important;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .dashLogo {
+        width: 80%;
+        min-width: 120px;
+    }
+}
+
+/* MOBILE RESOLUTION STYLES */
+
+/* MD */
+@media only screen and (max-width: 767px) {
+
+    .display-menu-icon {
+        display: block;
+        width: 30px;
+    }
+
+    .space {
+        display: none;
+    }
+
+    /* .mobileMenu{
+            transition: all 2s ease;
+            width: 90%;
+            z-index: 1;
+            height: 100vh;
+            top: 0;
+            animation-name: example;
+            animation-duration: 1s;
+            position: fixed;
+            animation-fill-mode: forwards;
+        } */
+    .close-menu-btn {
+        z-index: 1;
+        width: 10%;
+        position: absolute;
+        background: #000000bb;
+        right: 0;
+        animation-name: close;
+        animation-duration: 1s;
+    }
+
+    .sideNavIsSearch {
+        width: 90%
+    }
+
+    .closeNotSearch {
+        width: 100%
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .userRole {
+        width: 200px !important;
+    }
+}
+
+.userRole {
+    display: inline-block;
+    width: 110px;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: -4px;
+    text-align: right;
+}
+
+
+/* SM */
+@media only screen and (max-width: 575px) {
+    .dashLogo {
+        display: none;
+    }
+
+    .dropup .dropdown-toggle::after {
+        content: none;
+    }
+
+    .displayNone {
+        display: flex;
+    }
+
+    .display-menu-icon {
+        display: block;
+        width: 40px;
+    }
+
+    .topBar {
+        padding: 0 2px 0 2px !important;
+    }
+}
+
+.page-container p {
+    font-weight: 400 !important;
+}
+
+.filter-container {
+    flex-basis: auto;
+    flex-grow: 1;
+}
+
+.noteView {
+    min-height: 65px;
+    font-size: 12px;
+    border: solid 0.5px #e8e8e8;
+    text-align: justify;
+    word-break: break-all;
+    white-space: break-spaces;
+}
+.menu-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    border-bottom: 0.5px solid #818188;
+    z-index: 1056 !important;
+}

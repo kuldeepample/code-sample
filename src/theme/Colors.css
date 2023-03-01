@@ -1,0 +1,120 @@
+/* FONT COLORS */
+
+.C-primary {
+    color: #c60970 !important
+}
+
+.C-dark {
+    color: #545454 !important
+        /*Dark gray */
+}
+
+.C-818188 {
+    color: #818188 !important
+        /* Secondary */
+}
+
+.C-fff {
+    color: #fff !important
+}
+
+.C-link {
+    color: #586ed4 !important
+        /* Tool tip text */
+}
+
+.C-success {
+    color: #5ac26a !important
+}
+
+.C-warning {
+    color: #cfc956 !important
+}
+
+.C-danger {
+    color: #c8081e !important;
+}
+
+.C-d6d6d6 {
+    color: #d6d6d6 !important
+}
+
+.C-6e6e6e {
+    color: #6e6e6e !important
+}
+
+/* BACKGROUND COLORS */
+
+.Bg-primary {
+    background-color: #c60970 !important
+}
+
+.Bg-fff {
+    background-color: #fff !important
+}
+
+.Bg-link {
+    background-color: #586ed4 !important
+}
+
+.Bg-grey {
+    background-color: #818188 !important;
+}
+
+.Bg-success {
+    background-color: #5ac26a !important;
+}
+
+.Bg-warning {
+    background-color: #cfc956 !important;
+}
+
+.Bg-file {
+    background-color: #e9ecef;
+}
+
+.Bg-danger {
+    background-color: #c8081e !important;
+}
+
+.Bg-light {
+    background-color: #f6f6f6 !important;
+}
+
+/* BORDER COLOR */
+
+.B-primary {
+    border: 1px solid #c60970;
+}
+
+
+/* FONT SIZE */
+.F-10 {
+    font-size: 10px !important;
+    line-height: 12px;
+}
+
+.F-12 {
+    font-size: 12px !important;
+    line-height: 14px;
+}
+
+.F-14 {
+    font-size: 14px !important;
+    line-height: 16px;
+}
+
+.F-16 {
+    font-size: 16px !important;
+    line-height: 18px;
+}
+
+.F-18 {
+    font-size: 18px !important;
+    line-height: 20px;
+}
+
+.F-20 {
+    font-size: 20px !important;
+    line-height: 22px;
+}
